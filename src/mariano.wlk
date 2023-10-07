@@ -3,7 +3,7 @@ import golosinas.*
 object mariano {
 	var golosinas = []
 	 
-	method comprar(_golosina) { golosinas.add(_golosina) }
+	method comprar(_golosinas) { golosinas.addAll(_golosinas) }
 	
 	method desechar (_golosina) { golosinas.remove(_golosina) }
 	
@@ -62,6 +62,11 @@ object mariano {
 	
 	method tieneGolosinaDeSabor(_sabor) {
 		return golosinas.any({_golosina => _golosina.sabor() == _sabor})
+	}
+	//a checkear
+	method baniar(unaGolosina) {
+		const golosinaBaniada = new GolosinaBaniada(golosinaInterior = unaGolosina)
+		golosinas.add(golosinaBaniada)
 	}
 }
 
